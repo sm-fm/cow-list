@@ -1,0 +1,5 @@
+CREATE DATABASE cows;
+
+USE cows;
+
+-- TABLES
