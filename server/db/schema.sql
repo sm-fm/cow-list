@@ -1,0 +1,11 @@
+CREATE DATABASE cows;
+
+USE cows;
+
+-- TABLE
+CREATE TABLE cows (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(60) NOT NULL,
+  description VARCHAR(255),
+  PRIMARY KEY (id)
+);
