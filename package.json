@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "client": "live-server --open=./client/index.html --port=8080"
   },
   "author": "Sean McDaniel",
   "license": "ISC",
@@ -21,13 +22,16 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "jquery": "^3.6.1",
+    "live-server": "^1.2.2",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sequelize": "^6.25.0"
+    "sequelize": "^6.25.0",
+    "uuid": "^9.0.0"
   }
 }
