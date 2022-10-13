@@ -8,11 +8,24 @@ var bp = require('body-parser');
 var cors = require('cors');
 
 //MIDDLEWARE
-// app.use(morgan('dev'));
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bp());
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization');
+
+  //intercepts OPTIONS method
+  if ('OPTIONS' === req.method) {
+    //respond with 200
+    res.send(200);
+  }
+  else {
+  //move on
+    next();
+  }
+});
 
 
 //ROUTE HANDLING

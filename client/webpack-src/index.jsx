@@ -19,7 +19,6 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounting...');
     Request.getAll()
       .then(cowInfo => {
         this.setState({
