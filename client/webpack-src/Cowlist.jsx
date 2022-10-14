@@ -6,10 +6,10 @@ var Cowlist = (props) => {
   return (
     <div>
       {props.cows.map(cow => {
-        return <CowEntry cowDetails={cow} key={uuidv4()}/>
+        return <CowEntry cowDetails={cow} key={uuidv4()} handleToggle={props.handleToggle} handleDescription={props.handleDescription}/>
       })}
     </div>
-  )
+  );
 }
 
 export default Cowlist;

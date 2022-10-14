@@ -3,9 +3,7 @@ var app = express();
 var port = 3000;
 var db = require('./db/index');
 var controllers = require('./controllers/cows');
-var morgan = require('morgan');
 var bp = require('body-parser');
-var cors = require('cors');
 
 //MIDDLEWARE
 app.use(express.json());
@@ -26,7 +24,6 @@ app.use(function(req, res, next) {
     next();
   }
 });
-
 
 //ROUTE HANDLING
 app.get('/api/cows', controllers.get);

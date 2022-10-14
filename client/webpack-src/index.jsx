@@ -13,9 +13,13 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cows: [{cow: 'description'}]
+      cows: [],
+      toggle: false,
+      description: ''
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleDescription = this.handleDescription.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   componentDidMount() {
@@ -30,18 +34,31 @@ class Index extends React.Component {
       });
   }
 
-  handleClick (newCows) {
-    this.setState({cows: newCows})
+  handleClick(newCows) {
+    this.setState({cows: newCows});
+  }
+
+  handleDescription(newDescription) {
+    this.setState({description: newDescription});
+  }
+
+  handleToggle() {
+    if (!this.state.toggle) this.state.toggle = true;
   }
 
   render() {
     return (
       <div>
+        <div className="description">
+          {this.state.toggle ? (
+          <h3>{this.state.description}</h3>
+        ): null}
+        </div>
         <div className="form">
           <Form handleClick={this.handleClick} />
         </div>
         <div className="cowList">
-          <Cowlist cows={this.state.cows} />
+          <Cowlist cows={this.state.cows} handleToggle={this.handleToggle} handleDescription={this.handleDescription} />
         </div>
       </div>
     );
