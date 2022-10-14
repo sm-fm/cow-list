@@ -3,12 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Form from './Form.jsx';
 import Cowlist from './Cowlist.jsx';
 import Request from './requests.js';
-/*
-This will be the main component. Just want this to render a form component, Cow list component.
-The cow list component will map over data and spit out a cow component for each field in db
-This comp needs state to render all cow data from db, which it will pass down to form comp,
-and cow list comp. We need an onSubmit click handler for the form to change the state
-*/
+
 class Index extends React.Component {
   constructor(props) {
     super(props);
