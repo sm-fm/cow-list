@@ -38,7 +38,7 @@ class Index extends React.Component {
   }
 
   handleToggle() {
-    if (!this.state.toggle) this.state.toggle = true;
+    if (!this.state.toggle) this.setState({toggle: true});
   }
 
   render() {
