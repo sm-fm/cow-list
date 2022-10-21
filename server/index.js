@@ -6,7 +6,7 @@ var controllers = require('./controllers/cows');
 var bp = require('body-parser');
 
 //MIDDLEWARE
-app.use(express.static(__dirname, '/client/dist'));
+app.use(express.static(__dirname + '/../client/dist'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bp());
